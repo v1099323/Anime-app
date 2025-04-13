@@ -6,8 +6,20 @@ import { GETITEM } from '@/service/get-item'
 
 export const dynamic = 'force-dynamic'
 
+export const revalidate = 60
+
+async function getPosts() {
+	try {
+		const posts = await GETITEM.CATALOG()
+		return posts
+	} catch (err) {
+		console.error('Catalog fetch error:', err)
+		return []
+	}
+}
+
 export default async function Home() {
-	const posts = await GETITEM.CATALOG()
+	const posts = await getPosts()
 
 	return (
 		<div>
