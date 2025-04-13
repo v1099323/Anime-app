@@ -4,6 +4,8 @@ import { MainSlider } from '@/components/shared/main-slider/main-slider'
 
 import { GETITEM } from '@/service/get-item'
 
+export const revalidate = 60
+
 async function getPosts() {
 	try {
 		const posts = await GETITEM.CATALOG()

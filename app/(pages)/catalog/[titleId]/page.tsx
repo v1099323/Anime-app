@@ -12,7 +12,7 @@ import { TitleData } from '@/types/title.types'
 export async function generateMetadata({
 	params
 }: {
-	params: Promise<{ titleId: string }>
+	params: { titleId: string }
 }): Promise<Metadata> {
 	const { titleId } = await params
 	const data = await fetchTitleData(titleId)
@@ -48,7 +48,7 @@ export async function generateMetadata({
 	}
 }
 
-export default async function TitlePage({ params }: { params: Promise<{ titleId: string }> }) {
+export default async function TitlePage({ params }: { params: { titleId: string } }) {
 	const { titleId } = await params
 	const data = await fetchTitleData(titleId)
 
