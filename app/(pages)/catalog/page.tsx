@@ -10,6 +10,8 @@ import { GETITEM } from '@/service/get-item'
 
 export const revalidate = 60
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
 	title: catalogSEO.title
 }
