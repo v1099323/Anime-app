@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import NextTopLoader from 'nextjs-toploader'
 import { useState } from 'react'
 
-import { ProviderClerk } from './clerk-provider'
 import { ThemeProvider } from './theme-provider'
 
 export const MainProvider = ({ children }: { children: React.ReactNode }) => {
