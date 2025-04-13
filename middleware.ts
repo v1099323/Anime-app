@@ -1,8 +1,6 @@
 import { clerkMiddleware } from '@clerk/nextjs/server'
 
-export default clerkMiddleware({
-	authorizedParties: ['https://anime-kiqiwwl1l-violettlis-projects.vercel.app']
-})
+export default clerkMiddleware()
 
 export const config = {
 	matcher: [
