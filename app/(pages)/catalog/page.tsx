@@ -14,10 +14,18 @@ export const metadata: Metadata = {
 	title: catalogSEO.title
 }
 
-const CatalogPage = async () => {
-	const posts = await GETITEM.CATALOG()
+async function getPosts() {
+	try {
+		const posts = await GETITEM.CATALOG()
+		return posts
+	} catch (err) {
+		console.error('Catalog fetch error:', err)
+		return []
+	}
+}
 
-	console.log('Размер данных:', JSON.stringify(posts).length, 'байт')
+const CatalogPage = async () => {
+	const posts = await getPosts()
 	return (
 		<div>
 			<div className='flex gap-4 justify-between pt-7 md:pt-12'>
