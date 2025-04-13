@@ -4,10 +4,18 @@ import { MainSlider } from '@/components/shared/main-slider/main-slider'
 
 import { GETITEM } from '@/service/get-item'
 
-export const revalidate = 60
+async function getPosts() {
+	try {
+		const posts = await GETITEM.CATALOG()
+		return posts
+	} catch (err) {
+		console.error('Catalog fetch error:', err)
+		return []
+	}
+}
 
 export default async function Home() {
-	const posts = await getServerSideProps()
+	const posts = await getPosts()
 
 	return (
 		<div>
@@ -26,14 +34,4 @@ export default async function Home() {
 			<InfiniteCatalog />
 		</div>
 	)
-}
-
-async function getServerSideProps() {
-	try {
-		const posts = await GETITEM.CATALOG()
-		return posts
-	} catch (err) {
-		console.error('Catalog fetch error:', err)
-		return []
-	}
 }
