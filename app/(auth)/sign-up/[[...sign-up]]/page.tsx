@@ -1,7 +1,7 @@
-import { SignUp } from '@clerk/nextjs'
+// import { SignUp } from '@clerk/nextjs'
 
 const SignInPage = () => {
-	return <SignUp />
+	return <div className=''></div>
 }
 
 export default SignInPage
