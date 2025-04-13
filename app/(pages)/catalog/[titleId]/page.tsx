@@ -14,7 +14,7 @@ export async function generateMetadata({
 }: {
 	params: { titleId: string }
 }): Promise<Metadata> {
-	const { titleId } = await params
+	const { titleId } = params
 	const data = await fetchTitleData(titleId)
 
 	if (!data) {
@@ -49,7 +49,7 @@ export async function generateMetadata({
 }
 
 export default async function TitlePage({ params }: { params: { titleId: string } }) {
-	const { titleId } = await params
+	const { titleId } = params
 	const data = await fetchTitleData(titleId)
 
 	if (!data) {
