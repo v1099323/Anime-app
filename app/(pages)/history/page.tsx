@@ -1,5 +1,15 @@
 // 'use client'
 
+import React from 'react'
+
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page
+
 // import { useInfiniteQuery } from '@tanstack/react-query'
 // import { AnimatePresence, motion } from 'framer-motion'
 // import { useEffect, useState } from 'react'
